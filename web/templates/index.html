@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reliability Playground</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    button {
+      padding: 10px 16px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🧪 Reliability Playground</h1>
+
+<div class="card">
+  <h3>System Status</h3>
+  <p>Uptime: {{.Uptime}}</p>
+  <p>Goroutines: {{.Goroutines}}</p>
+  <p>Memory: {{.MemoryMB}} MB</p>
+  <p>Pod: {{.Pod}}</p>
+</div>
+
+<div class="card">
+  <h3>Traffic Controls</h3>
+  <button onclick="fetch('/api/fast')">Fast</button>
+  <button onclick="fetch('/api/slow?ms=1000')">Slow</button>
+  <button onclick="fetch('/api/error?rate=0.5')">Error</button>
+</div>
+
+</body>
+</html>
