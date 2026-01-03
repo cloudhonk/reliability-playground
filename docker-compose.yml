@@ -1,0 +1,10 @@
+services:
+  reliability-playground:
+    build: .
+    image: reliability-playground:local
+    container_name: reliability-playground
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVICE_NAME=reliability-playground
+    restart: unless-stopped
